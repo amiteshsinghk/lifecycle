@@ -50,5 +50,5 @@
     - Activity  onResume() called
     - Frag      onResume called
 
-* **When a BottomSheet/ Alert dialog is opened from an Activity or Fragment, which lifecycle methods of the Activity/Fragment are triggered?** 
+* **When a BottomSheet/ Alert dialog / Dialog Fragment is opened from an Activity or Fragment, which lifecycle methods of the Activity/Fragment are triggered?** 
     - None of the Activity or Fragment lifecycle methods are called.
