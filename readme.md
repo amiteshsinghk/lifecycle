@@ -52,3 +52,7 @@
 
 * **When a BottomSheet/ Alert dialog / Dialog Fragment is opened from an Activity or Fragment, which lifecycle methods of the Activity/Fragment are triggered?** 
     - None of the Activity or Fragment lifecycle methods are called.
+    - A video demonstrates that opening a BottomSheet, AlertDialog, or DialogFragment from an Activity or Fragment does not trigger any lifecycle methods in the hosting Activity or Fragment—not even onPause(), which is quite surprising.
+
+https://github.com/user-attachments/assets/4401f755-9bb8-432b-8716-2fc19144b4ca
+
