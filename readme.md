@@ -1,4 +1,4 @@
-When you open the application Activity1 start and open the next activity2 and click back. Activity lifecycle will be: 
+* **When you open the application Activity1 start and open the next activity2 and click back. Activity lifecycle will be:**
     - MainActivityLog          D  onCreate() called
     - MainActivityLog          D  onStart() called
     - MainActivityLog          D  onResume() called
@@ -13,7 +13,7 @@ When you open the application Activity1 start and open the next activity2 and cl
     - MainActivityLog2         D  onStop() called
     - MainActivityLog2         D  onDestroy() called
 
-When you open the application Activity1 start and open the next activity2 and open next activity 3 and click back. Activity lifecycle will be:
+* **When you open the application Activity1 start and open the next activity2 and open next activity 3 and click back. Activity lifecycle will be:**
     - MainActivityLog         D  onCreate() called
     - MainActivityLog         D  onStart() called
     - MainActivityLog         D  onResume() called
@@ -38,7 +38,7 @@ When you open the application Activity1 start and open the next activity2 and op
     - MainActivityLog2        D  onStop() called
     - MainActivityLog2        D  onDestroy() called
 
-When an activity with a fragment is launched, what is the sequence of lifecycle methods called for both the activity and the fragment?
+* **When an activity with a fragment is launched, what is the sequence of lifecycle methods called for both the activity and the fragment?**
     - Activity  onCreate() called
     - Frag      onAttach called
     - Frag      onCreate called
