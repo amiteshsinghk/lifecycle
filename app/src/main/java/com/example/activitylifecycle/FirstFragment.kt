@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.fragment.findNavController
 import com.example.activitylifecycle.databinding.FragmentFirstBinding
 import kotlinx.coroutines.CoroutineScope
@@ -55,9 +56,18 @@ class FirstFragment : Fragment() {
                 .addToBackStack("SecondFragment")
                 .commit()
         }
-        binding.buttonDialog.setOnClickListener {
+        binding.btnDialogBottomSheet.setOnClickListener {
             val bottomSheet = MyBottomSheetDialogFragment()
             bottomSheet.show(parentFragmentManager, "MyBottomSheet")
+        }
+
+        binding.btnDialog.setOnClickListener {
+            showSimpleDialog()
+        }
+
+        binding.btnDialogFragment.setOnClickListener {
+            val dialog = MyDialogFragment()
+            dialog.show(parentFragmentManager, "MyDialog")
         }
     }
 
@@ -104,6 +114,15 @@ class FirstFragment : Fragment() {
         Log.d("DemoL :: FirstFrag", "onDetach called")
         super.onDetach()
     }
-
+    private fun showSimpleDialog() {
+        val dialog = AlertDialog.Builder(requireContext())
+            .setTitle("Simple Dialog")
+            .setMessage("This is a simple dialog")
+            .setPositiveButton("OK") { _, _ -> Log.d("DialogLifecycle", "Dialog OK Clicked") }
+            .setNegativeButton("Cancel") { _, _ -> Log.d("DialogLifecycle", "Dialog Cancel Clicked") }
+            .create()
+        Log.d("DialogLifecycle", "onCreate - Dialog Created")
+        dialog.show()
+    }
 
 }

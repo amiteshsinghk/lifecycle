@@ -11,6 +11,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import com.example.activitylifecycle.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -41,10 +42,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
-        binding.btnDialogFragment.setOnClickListener {
+        binding.btnDialogBottomSheet.setOnClickListener {
             val bottomSheet = MyBottomSheetDialogFragment()
             bottomSheet.show(supportFragmentManager, "MyBottomSheet")
         }
+
+        binding.btnDialog.setOnClickListener {
+            showSimpleDialog()
+        }
+
+        binding.btnDialogFragment.setOnClickListener {
+            val dialog = MyDialogFragment()
+            dialog.show(supportFragmentManager, "MyDialog")
+        }
+
+
 
         binding.fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -102,4 +114,14 @@ class MainActivity : AppCompatActivity() {
         Log.d("DemoL :: MainAct", "onDestroy() called")
     }
 
+    private fun showSimpleDialog() {
+        val dialog = AlertDialog.Builder(this)
+            .setTitle("Simple Dialog")
+            .setMessage("This is a simple dialog")
+            .setPositiveButton("OK") { _, _ -> Log.d("DialogLifecycle", "Dialog OK Clicked") }
+            .setNegativeButton("Cancel") { _, _ -> Log.d("DialogLifecycle", "Dialog Cancel Clicked") }
+            .create()
+        Log.d("DialogLifecycle", "onCreate - Dialog Created")
+        dialog.show()
+    }
 }
