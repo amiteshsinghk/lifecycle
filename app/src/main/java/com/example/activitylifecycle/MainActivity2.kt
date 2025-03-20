@@ -3,11 +3,8 @@ package com.example.activitylifecycle
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.activitylifecycle.databinding.ActivityMain2Binding
 
 class MainActivity2 : AppCompatActivity() {
@@ -15,7 +12,6 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-//        setContentView(R.layout.activity_main2)
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.d("DemoL :: MainAct2", "onCreate() called")

@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.activitylifecycle.databinding.ActivityMain3Binding
 
 class MainActivity3 : AppCompatActivity() {
@@ -19,6 +17,7 @@ class MainActivity3 : AppCompatActivity() {
             finish()
         }
     }
+
     override fun onStart() {
         super.onStart()
         Log.d("DemoL :: MainAct3", "onStart() called")

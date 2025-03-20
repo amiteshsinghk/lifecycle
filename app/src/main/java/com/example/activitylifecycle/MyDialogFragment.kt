@@ -1,6 +1,5 @@
 package com.example.activitylifecycle
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
@@ -13,9 +12,9 @@ import androidx.fragment.app.DialogFragment
 import com.example.activitylifecycle.databinding.FragmentMyDialogBinding
 
 
-class MyDialogFragment  : DialogFragment() {
+class MyDialogFragment : DialogFragment() {
 
-    var binding : FragmentMyDialogBinding? = null
+    var binding: FragmentMyDialogBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("DemoL :: DialogFrag", "onCreate - Dialog Created")
@@ -35,9 +34,12 @@ class MyDialogFragment  : DialogFragment() {
         Log.d("DemoL :: DialogFrag", "onCreateDialog - Dialog Shown")
         val dialog = Dialog(requireActivity())
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-//        dialog.setContentView(binding)
-        dialog.window?.setBackgroundDrawable(ContextCompat.getDrawable(requireContext(),
-            R.color.black_88))
+        dialog.window?.setBackgroundDrawable(
+            ContextCompat.getDrawable(
+                requireContext(),
+                R.color.black_88
+            )
+        )
         dialog.window?.setLayout(
             ViewGroup.LayoutParams.MATCH_PARENT,
             ViewGroup.LayoutParams.MATCH_PARENT

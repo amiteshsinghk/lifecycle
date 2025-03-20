@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.navigation.fragment.findNavController
 import com.example.activitylifecycle.databinding.FragmentSecondBinding
 
 /**
@@ -16,11 +15,8 @@ import com.example.activitylifecycle.databinding.FragmentSecondBinding
  */
 class SecondFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var binding: FragmentSecondBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
     override fun onAttach(context: Context) {
         Log.d("DemoL :: SecondFrag", "onAttach called")
         super.onAttach(context)
@@ -34,17 +30,17 @@ class SecondFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         Log.d("DemoL :: SecondFrag", "onCreateView called")
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
-        return binding.root
+        binding = FragmentSecondBinding.inflate(inflater, container, false)
+        return binding?.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("DemoL :: SecondFrag", "onViewCreated called")
-        binding.buttonSecond.setOnClickListener {
+        binding?.buttonSecond?.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
         val callback = object : OnBackPressedCallback(true) {
@@ -91,7 +87,7 @@ class SecondFragment : Fragment() {
     override fun onDestroyView() {
         Log.d("DemoL :: SecondFrag", "onDestroyView called")
         super.onDestroyView()
-        _binding = null
+        binding = null
     }
 
     override fun onDestroy() {

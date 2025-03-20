@@ -3,19 +3,12 @@ package com.example.activitylifecycle
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.Fragment
 import com.example.activitylifecycle.databinding.FragmentFirstBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -23,6 +16,7 @@ import kotlinx.coroutines.withContext
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -100,6 +94,7 @@ class FirstFragment : Fragment() {
         Log.d("DemoL :: FirstFrag", "onSaveInstanceState called")
         super.onSaveInstanceState(outState)
     }
+
     override fun onDestroyView() {
         Log.d("DemoL :: FirstFrag", "onDestroyView called")
         super.onDestroyView()
@@ -110,16 +105,23 @@ class FirstFragment : Fragment() {
         Log.d("DemoL :: FirstFrag", "onDestroy called")
         super.onDestroy()
     }
+
     override fun onDetach() {
         Log.d("DemoL :: FirstFrag", "onDetach called")
         super.onDetach()
     }
+
     private fun showSimpleDialog() {
         val dialog = AlertDialog.Builder(requireContext())
             .setTitle("Simple Dialog")
             .setMessage("This is a simple dialog")
             .setPositiveButton("OK") { _, _ -> Log.d("DialogLifecycle", "Dialog OK Clicked") }
-            .setNegativeButton("Cancel") { _, _ -> Log.d("DialogLifecycle", "Dialog Cancel Clicked") }
+            .setNegativeButton("Cancel") { _, _ ->
+                Log.d(
+                    "DialogLifecycle",
+                    "Dialog Cancel Clicked"
+                )
+            }
             .create()
         Log.d("DialogLifecycle", "onCreate - Dialog Created")
         dialog.show()

@@ -2,18 +2,11 @@ package com.example.activitylifecycle
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.activitylifecycle.databinding.ActivityFragmentBinding
 
 class ActivityFragment : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityFragmentBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +15,7 @@ class ActivityFragment : AppCompatActivity() {
         binding = ActivityFragmentBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        binding.btnBack.setOnClickListener{
+        binding.btnBack.setOnClickListener {
             finish()
         }
         supportFragmentManager.beginTransaction()
