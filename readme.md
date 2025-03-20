@@ -1,3 +1,18 @@
+📌 Activity & Fragment Lifecycle Logger
+This repository demonstrates the lifecycle behavior of Activities and Fragments, including logging when navigating between them and when opening UI components like BottomSheets, AlertDialogs, and DialogFragments.
+
+✨ Features
+✔️ Logs lifecycle methods of Activity and Fragment during navigation.
+✔️ Prints logs when opening BottomSheetDialog, AlertDialog, and DialogFragment from both Activity and Fragment.
+✔️ Helps analyze how lifecycle events behave when UI components are displayed.
+✔️ Useful for debugging and understanding lifecycle transitions.
+
+🛠 Usage
+Run the app and navigate between Activities and Fragments.
+Open a BottomSheet, AlertDialog, or DialogFragment and observe the lifecycle logs.
+Compare the behavior when switching screens versus displaying dialogs.
+📌 Surprising Insight: The logs reveal that opening a BottomSheet, AlertDialog, or DialogFragment does not trigger any lifecycle methods in the hosting Activity or Fragment—not even onPause(). 🚀
+
 * **When you open the application Activity1 start and open the next activity2 and click back. Activity lifecycle will be:**
     - MainActivityLog          D  onCreate() called
     - MainActivityLog          D  onStart() called
