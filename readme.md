@@ -13,6 +13,10 @@ Open a BottomSheet, AlertDialog, or DialogFragment and observe the lifecycle log
 Compare the behavior when switching screens versus displaying dialogs.
 📌 Surprising Insight: The logs reveal that opening a BottomSheet, AlertDialog, or DialogFragment does not trigger any lifecycle methods in the hosting Activity or Fragment—not even onPause(). 🚀
 
+📱 Test Device
+Device Model: OnePlus Nord 2
+Android Version: 13
+
 ### 🚀 Application Walkthrough
 
 To observe lifecycle methods, **clone the repository** and filter logs by **`DemoL`** in **Logcat**.
