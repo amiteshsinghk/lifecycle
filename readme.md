@@ -90,16 +90,3 @@ https://github.com/user-attachments/assets/4401f755-9bb8-432b-8716-2fc19144b4ca
 3. When an **AlertDialog** is opened and closed, **no Activity lifecycle methods** are triggered.  
 4. The same behavior is observed when a **DialogFragment** is opened and closed—**no Activity lifecycle methods** are invoked.  
 5. The same pattern applies when these dialogs are opened from a **Fragment**—the hosting Fragment’s lifecycle methods remain untouched.
-
-Application walkthrough:
-To log the lifecycle method clone the repository and filter **DemoL** in logcat.
-
-1. When the application open it will open the Main Activity.
-2. It has button
-    - Open Fragment: It will open a new Actvity with fragment attached in that Acitivity.
-    - Bottom Sheet: It will open the bottom sheet dialog and log the lifecycle method in logcat
-    - Simple Alert Dialog: It will open the Alert Dialog and log the lifecycle method in logcat in this case none of the lifecycle method is called.
-    - Dialog Fragment: It will open theDialog fragment and log the lifecycle method in logcat.
-    - Floating Action Button: It will open a new activity and log the lifecycle method in logcat.
-
-
