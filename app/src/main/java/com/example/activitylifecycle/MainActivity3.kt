@@ -12,6 +12,7 @@ class MainActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMain3Binding.inflate(layoutInflater)
+        setContentView(binding?.root)
         Log.d("DemoL :: MainAct3", "onCreate() called")
         binding?.btnActivity3?.setOnClickListener {
             finish()

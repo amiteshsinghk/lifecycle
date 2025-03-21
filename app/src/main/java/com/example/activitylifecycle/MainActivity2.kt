@@ -15,9 +15,12 @@ class MainActivity2 : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         Log.d("DemoL :: MainAct2", "onCreate() called")
-        binding.favBtn.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             var i = Intent(this, MainActivity3::class.java)
             startActivity(i)
+        }
+        binding.btnBack.setOnClickListener {
+           finish()
         }
 
     }
