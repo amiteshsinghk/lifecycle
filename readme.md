@@ -13,6 +13,18 @@ Open a BottomSheet, AlertDialog, or DialogFragment and observe the lifecycle log
 Compare the behavior when switching screens versus displaying dialogs.
 📌 Surprising Insight: The logs reveal that opening a BottomSheet, AlertDialog, or DialogFragment does not trigger any lifecycle methods in the hosting Activity or Fragment—not even onPause(). 🚀
 
+### 🚀 Application Walkthrough
+
+To observe lifecycle methods, **clone the repository** and filter logs by **`DemoL`** in **Logcat**.
+
+1. When the app launches, it opens the **MainActivity**.
+2. The MainActivity includes several buttons:
+   - **Open Fragment**: Launches a new Activity containing a Fragment. Fragment lifecycle methods are logged in Logcat.
+   - **Bottom Sheet**: Opens a BottomSheetDialog and logs its lifecycle methods. Activity lifecycle methods remain unchanged.
+   - **Simple Alert Dialog**: Displays an AlertDialog. No Activity lifecycle methods are triggered.
+   - **Dialog Fragment**: Opens a DialogFragment and logs its lifecycle methods. Again, Activity lifecycle methods are not called.
+   - **Floating Action Button**: Launches a new Activity. Lifecycle methods of both current and new Activities are logged.
+
 * **When you open the application Activity1 start and open the next activity2 and click back. Activity lifecycle will be:**
     - MainActivityLog          D  onCreate() called
     - MainActivityLog          D  onStart() called
@@ -69,5 +81,25 @@ Compare the behavior when switching screens versus displaying dialogs.
     - None of the Activity or Fragment lifecycle methods are called.
     - A video demonstrates that opening a BottomSheet, AlertDialog, or DialogFragment from an Activity or Fragment does not trigger any lifecycle methods in the hosting Activity or Fragment—not even onPause(), which is quite surprising.
 
+
+
 https://github.com/user-attachments/assets/4401f755-9bb8-432b-8716-2fc19144b4ca
+
+1. When the app is launched, sent to the background, and brought back to the foreground, all lifecycle methods of the **Activity** are logged in the console.  
+2. When a **BottomSheet** is opened and closed, all its lifecycle methods are triggered, but **none** of the Activity’s lifecycle methods are called.  
+3. When an **AlertDialog** is opened and closed, **no Activity lifecycle methods** are triggered.  
+4. The same behavior is observed when a **DialogFragment** is opened and closed—**no Activity lifecycle methods** are invoked.  
+5. The same pattern applies when these dialogs are opened from a **Fragment**—the hosting Fragment’s lifecycle methods remain untouched.
+
+Application walkthrough:
+To log the lifecycle method clone the repository and filter **DemoL** in logcat.
+
+1. When the application open it will open the Main Activity.
+2. It has button
+    - Open Fragment: It will open a new Actvity with fragment attached in that Acitivity.
+    - Bottom Sheet: It will open the bottom sheet dialog and log the lifecycle method in logcat
+    - Simple Alert Dialog: It will open the Alert Dialog and log the lifecycle method in logcat in this case none of the lifecycle method is called.
+    - Dialog Fragment: It will open theDialog fragment and log the lifecycle method in logcat.
+    - Floating Action Button: It will open a new activity and log the lifecycle method in logcat.
+
 
