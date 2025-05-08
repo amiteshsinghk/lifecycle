@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("DemoL :: MainAct", "onRestart() called")
+    }
+
     override fun onStart() {
         super.onStart()
         Log.d("DemoL :: MainAct", "onStart() called")

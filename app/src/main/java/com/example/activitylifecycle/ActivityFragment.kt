@@ -25,6 +25,10 @@ class ActivityFragment : AppCompatActivity() {
 
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("DemoL :: ActFrag", "onRestart() called")
+    }
 
     override fun onStart() {
         super.onStart()
