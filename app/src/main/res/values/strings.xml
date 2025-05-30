@@ -55,6 +55,7 @@
     <string name="activity_fragment">Activity Fragment\n</string>
     <string name="simple_dialog">Simple Alert Dialog</string>
     <string name="dialog_fragment">Dialog Fragment</string>
+    <string name="dialog_activity">Dialog Activity</string>
     <string name="dialogfragment">DialogFragment</string>
     <string name="close">close</string>
     <string name="second_fragment">Second Fragment</string>

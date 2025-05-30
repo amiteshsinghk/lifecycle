@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             dialog.show(supportFragmentManager, "MyDialog")
         }
 
+        binding.btnDialogActivity.setOnClickListener {
+            val intent = Intent(this, MyDialogActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.fab.setOnClickListener { view ->
             var i = Intent(this, MainActivity2::class.java)
             startActivity(i)
