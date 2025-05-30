@@ -1,6 +1,7 @@
 package com.example.activitylifecycle
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -62,6 +63,11 @@ class FirstFragment : Fragment() {
         binding.btnDialogFragment.setOnClickListener {
             val dialog = MyDialogFragment()
             dialog.show(parentFragmentManager, "MyDialog")
+        }
+
+        binding.btnDialogActivity.setOnClickListener {
+            val intent = Intent(requireActivity(), MyDialogActivity::class.java)
+            startActivity(intent)
         }
     }
 
