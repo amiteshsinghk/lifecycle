@@ -87,7 +87,29 @@ To observe lifecycle methods, **clone the repository** and filter logs by **`Dem
     - None of the Activity or Fragment lifecycle methods are called.
     - A video demonstrates that opening a BottomSheet, AlertDialog, or DialogFragment from an Activity or Fragment does not trigger any lifecycle methods in the hosting Activity or Fragment—not even onPause(), which is quite surprising.
 
+* **When a DialogActivity is opened from an Activity, which lifecycle methods of the Activity are triggered?**
+    - MainAct    onPause() called
+    - DialogAct  onCreate() called
+    - DialogAct  onStart() called
+    - DialogAct  onResume() called
+    - Dialog Visible
+    - DialogAct  onPause() called
+    - MainAct    onResume() called
+    - DialogAct  onStop() called
+    - DialogAct  onDestroy() called
 
+ * **When a DialogActivity is opened from an Fragment, which lifecycle methods of the Fragment are triggered?**
+     - FirstFrag  onPause called
+     - ActFrag    onPause() called
+     - DialogAct  onCreate() called
+     - DialogAct  onStart() called
+     - DialogAct  onResume() called
+     - Dialog Visible
+     - DialogAct  onPause() called
+     - ActFrag    onResume() called
+     - FirstFrag  onResume called
+     - DialogAct  onStop() called
+     - DialogAct  onDestroy() called
 
 https://github.com/user-attachments/assets/4401f755-9bb8-432b-8716-2fc19144b4ca
 
